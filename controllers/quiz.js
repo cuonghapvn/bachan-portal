@@ -23,7 +23,8 @@ exports.postAnswer = (req, res, next) => {
     if (err) {
       return next(err);
     }
-    if (answer.sender_id == req.body.sender_id) {
+    console.log(answer);
+    if (answer) {
       console.log('User is already answer this question. Try to update!');
       answer.quizAnswer = req.body.quizAnswer;
       answer.quizAnswerDate = new Date();
