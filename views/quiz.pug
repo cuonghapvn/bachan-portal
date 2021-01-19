@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  h1 BAちゃん Portal
+  p.lead Tổng hợp kết quả Quiz
+  hr
+  table.table-bordered.table-primary.table-light
+    tr
+      th Sender ID
+      th Sender Name
+      th Question
+      th Answer
+      th Date
+    each answer in answers
+      tr
+        td= answer.sender_id
+        td= answer.sender_name 
+        td= answer.quizQuestion
+        td= answer.quizAnswer
+        td= answer.quizAnswerDate

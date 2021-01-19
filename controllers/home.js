@@ -1,3 +1,6 @@
+/* eslint-disable linebreak-style */
+const Answer = require('../models/Answer');
+
 /**
  * GET /
  * Home page.

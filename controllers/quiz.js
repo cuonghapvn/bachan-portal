@@ -2,12 +2,16 @@
 const Answer = require('../models/Answer');
 
 /**
- * GET /
- * Home page.
+ * GET /quiz
+ * Quiz page.
  */
 exports.index = (req, res) => {
-  res.render('home', {
-    title: 'Home'
+  Answer.find({}, (err, answers) => {
+    console.log(answers);
+    res.render('quiz', {
+      title: 'Tổng hợp kết quả Quiz',
+      answers: answers
+    });
   });
 };
 
