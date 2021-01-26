@@ -2,19 +2,50 @@ extends layout
 
 block content
   h1 BAちゃん Portal
-  p.lead Tổng hợp kết quả Quiz
+  p.lead Tổng hợp kết quả hợp lệ
   hr
   table.table-bordered.table-primary.table-light
     tr
       //- th Sender ID
       th Sender Name
-      th Question
-      th Answer
-      th Date
+      th Q1_Answer
+      th Q1_Time
+      th Q2_Answer
+      th Q2_Time
+      th Q3_Answer
+      th Q3_Time
+
+    each answer in answers_valid
+      tr
+        //- td= answer.sender_id
+        td= answer.sender_name 
+        td= answer.quizQ1
+        td= moment(answer.quizQ1Date).local().format('YYYY/MM/DD hh:mm:ss a')
+        td= answer.quizQ2
+        td= moment(answer.quizQ2Date).local().format('YYYY/MM/DD hh:mm:ss a')
+        td= answer.quizQ3
+        td= moment(answer.quizQ3Date).local().format('YYYY/MM/DD hh:mm:ss a')
+  
+  hr
+  p.lead Tổng hợp kết quả Quiz
+  table.table-bordered.table-primary.table-light
+    tr
+      //- th Sender ID
+      th Sender Name
+      th Q1_Answer
+      th Q1_Time
+      th Q2_Answer
+      th Q2_Time
+      th Q3_Answer
+      th Q3_Time
+
     each answer in answers
       tr
         //- td= answer.sender_id
         td= answer.sender_name 
-        td= answer.quizQuestion
-        td= answer.quizAnswer
-        td= answer.quizAnswerDate
+        td= answer.quizQ1
+        td= moment(answer.quizQ1Date).local().format('YYYY/MM/DD hh:mm:ss a')
+        td= answer.quizQ2
+        td= moment(answer.quizQ2Date).local().format('YYYY/MM/DD hh:mm:ss a')
+        td= answer.quizQ3
+        td= moment(answer.quizQ3Date).local().format('YYYY/MM/DD hh:mm:ss a')
