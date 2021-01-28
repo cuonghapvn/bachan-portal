@@ -8,7 +8,7 @@ const Answer = require('../models/Answer');
 exports.index = (req, res) => {
   Answer.find({}, (err, answers) => {
     console.log(answers);
-    Answer.find({quizQ1: 'B', quizQ2: 'C', quizQ3: 'B'}, (err, answers_valid) => {
+    Answer.find({quizQ1: 'B', quizQ2: 'C', quizQ3: 'B'}, null, {sort: {quizQ3Date: 1}}, (err, answers_valid) => {
       console.log(answers_valid);
       res.render('quiz', {
         title: 'Tổng hợp kết quả Quiz',

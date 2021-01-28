@@ -4,14 +4,12 @@ block content
   h1 BAちゃん Portal
   p.lead Tổng hợp kết quả hợp lệ
   hr
-  table.table-bordered.table-primary.table-light
-    tr
+  table.table-bordered.table-primary
+    tr.Success
       //- th Sender ID
       th Sender Name
       th Q1_Answer
-      th Q1_Time
       th Q2_Answer
-      th Q2_Time
       th Q3_Answer
       th Q3_Time
 
@@ -20,12 +18,13 @@ block content
         //- td= answer.sender_id
         td= answer.sender_name 
         td= answer.quizQ1
-        td= moment(answer.quizQ1Date).local().format('YYYY/MM/DD hh:mm:ss a')
         td= answer.quizQ2
-        td= moment(answer.quizQ2Date).local().format('YYYY/MM/DD hh:mm:ss a')
         td= answer.quizQ3
         td= moment(answer.quizQ3Date).local().format('YYYY/MM/DD hh:mm:ss a')
   
+  hr
+  hr
+  hr
   hr
   p.lead Tổng hợp kết quả Quiz
   table.table-bordered.table-primary.table-light
@@ -33,9 +32,7 @@ block content
       //- th Sender ID
       th Sender Name
       th Q1_Answer
-      th Q1_Time
       th Q2_Answer
-      th Q2_Time
       th Q3_Answer
       th Q3_Time
 
@@ -44,8 +41,6 @@ block content
         //- td= answer.sender_id
         td= answer.sender_name 
         td= answer.quizQ1
-        td= moment(answer.quizQ1Date).local().format('YYYY/MM/DD hh:mm:ss a')
         td= answer.quizQ2
-        td= moment(answer.quizQ2Date).local().format('YYYY/MM/DD hh:mm:ss a')
         td= answer.quizQ3
         td= moment(answer.quizQ3Date).local().format('YYYY/MM/DD hh:mm:ss a')
